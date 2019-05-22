@@ -64,11 +64,31 @@ variables:
   - name: vsphere_vcpu_number
     description: Number of vCPU cores
     default: "2"
-    type_hint: text
+    type_hint: dropdown
+    dd_list:
+      - key: "2"
+        value: "2"
+      - key: "4"
+        value: "4"
+      - key: "8"
+        value: "8"
+      - key: "16"
+        value: "16"
   - name: vsphere_memory_size
     description: Memory size
     default: "4608"
-    type_hint: text
+    type_hint: dropdown
+    dd_list:
+      - key: "4608"
+        value: "4608"
+      - key: "6656"
+        value: "6656"
+      - key: "9216"
+        value: "9216"
+      - key: "16384"
+        value: "16384"
+      - key: "57344"
+        value: "57344"
   - name: vsphere_port_group_mgmt
     description: Manavgement Port Group
     default: "VM Network"
