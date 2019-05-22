@@ -100,4 +100,3 @@ variables:
     description: Trust Port Group
     default: "VM Network"
     type_hint: text
-
