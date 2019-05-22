@@ -17,7 +17,7 @@ extends:
 # group multiple skillets of the same type (pan-os skillets labeled as version: 9.0 for example)
 labels:
   terraform_provider: vsphere
-  collections:
+  collection:
     - Datacenter Virtualization
 
 
