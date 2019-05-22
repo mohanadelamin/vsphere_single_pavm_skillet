@@ -66,30 +66,3 @@ variable "vsphere_port_group_trust" {
   description = "In which port group the VM NIC will be configured for trust interface (default: VM Network)"
   default     = "VM Network"
 }
-
-variable "vsphere_ipv4_address" {
-  description = "What is the IPv4 address of the VM"
-}
-
-variable "vsphere_ipv4_netmask" {
-  description = "What is the IPv4 netmask of the VM (default: 24)"
-  default     = "24"
-}
-
-variable "vsphere_ipv4_gateway" {
-  description = "What is the IPv4 gateway of the VM"
-}
-
-variable "vsphere_dns_servers" {
-  description = "What are the DNS servers of the VM (default: 8.8.8.8,5.5.5.5)"
-  default     = "8.8.8.8,5.5.5.5"
-}
-
-variable "vsphere_domain" {
-  description = "What is the domain of the VM"
-}
-
-variable "vsphere_time_zone" {
-  description = "What is the timezone of the VM (default: UTC)"
-  default     = "UTC"
-}
