@@ -1,14 +1,14 @@
 # vCenter connection
 
-variable "user" {
+variable "vsphere_user" {
   description = "vSphere user name"
 }
 
-variable "password" {
+variable "vsphere_password" {
   description = "vSphere password"
 }
 
-variable "vsphere_server" {
+variable "vsphere_vcenter" {
   description = "vCenter server FQDN or IP"
 }
 
