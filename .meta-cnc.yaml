@@ -24,15 +24,15 @@ labels:
 # the terraform binary as '--var' options, thus overriding any tfvars entries.
 # Variable names MUST match the names of the defined terraform variables
 variables:
-  - name: vsphere_vcenter
+  - name: vsphere_server
     description: vCenter IP or FQDN
     default: 10.197.140.102
     type_hint: text
-  - name: vsphere_user
+  - name: user
     description: vCenter username
     default: ansible@panlab.local
     type_hint: text
-  - name: vsphere_password
+  - name: password
     description: vCenter Password
     default:
     type_hint: password
