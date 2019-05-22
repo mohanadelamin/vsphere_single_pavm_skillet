@@ -92,7 +92,7 @@ variables:
     description: Manavgement Port Group
     default: VM Network
     type_hint: text
-  - name: vsphere_port_group_unstrust
+  - name: vsphere_port_group_untrust
     description: Untrust Port Group
     default: VM Network
     type_hint: text
