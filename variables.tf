@@ -57,3 +57,37 @@ variable "vsphere_port_group_untrust" {
 variable "vsphere_port_group_trust" {
   description = "In which port group the VM NIC will be configured for trust interface (default: VM Network)"
 }
+
+variable "pavm_hostname" {
+  description = "VM-Series hostname (Optional)"
+}
+variable "pavm_ip_address" {
+  description = "VM-Series management IP address (Optional)"
+}
+variable "pavm_netmask" {
+  description = "VM-Series management netmask (Optional)"
+}
+variable "pavm_gateway" {
+  description = "VM-Series management gateway (Optional)"
+}
+variable "pavm_dns_primary" {
+  description = "VM-Series managemenet primary DNS (Optional)"
+}
+variable "pavm_dns_secondary" {
+  description = "VM-Series management secondary DNS (Optional)"
+}
+variable "panorama_server_ip" {
+  description = "Panorama Server IP address (Optional)"
+}
+variable "panorama_tplname" {
+  description = "Panorama template stack name (Optional)"
+}
+variable "panorama_dgname" {
+  description = "Panorama device group name (Optional)"
+}
+variable "panorama_vm_auth_key" {
+  description = "Panorama VM authentication Key (Optional)"
+}
+variable "pavm_authcode" {
+  description = "VM-Series license auth code (Optional)"
+}

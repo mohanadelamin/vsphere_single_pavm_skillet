@@ -49,6 +49,47 @@ data "vsphere_virtual_machine" "template" {
   datacenter_id = "${data.vsphere_datacenter.dc.id}"
 }
 
+#
+
+resource "local_file" "config" {
+    content     = <<EOF
+type=static
+ip-address=${var.pavm_ip_address}
+hostname=${var.pavm_hostname}
+tplname=${var.panorama_tplname}
+default-gateway=${var.pavm_gateway}
+netmask=${var.pavm_netmask}
+vm-auth-key=${var.panorama_vm_auth_key}
+panorama-server=${var.panorama_server_ip}
+dgname=${var.panorama_dgname}
+dns-primary=${var.pavm_dns_primary}
+dns-secondary=${var.pavm_dns_secondary}
+EOF
+    filename = "${path.module}/bts/config/init-cfg.txt"
+}
+
+resource "local_file" "license" {
+    content     = "${var.pavm_authcode}"
+    filename = "${path.module}/bts/license/authcodes"
+}
+
+resource "local_file" "software" {
+    content     = ""
+    filename = "${path.module}/bts/software/.software"
+}
+
+resource "local_file" "content" {
+    content     = ""
+    filename = "${path.module}/bts/content/.content"
+}
+
+
+resource "null_resource" "bts" {
+  provisioner "local-exec" {
+    command = "dd if=${path.module}/bts of=${path.module}/btsiso-name.iso"
+  }
+}
+
 #===============================================================================
 # vSphere Resources
 #===============================================================================
