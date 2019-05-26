@@ -2,7 +2,7 @@
 name: vsphere_single_pavm
 
 # label should be a human readable label that conveys what this skillet will do
-label: vSphere Single Pan-OS VM-Series
+label: Deploying Single Pan-OS VM-Series on vSphere Environment.
 
 # description is a longer more informative version of a label
 description: vSphere Single Pan-OS VM-Series

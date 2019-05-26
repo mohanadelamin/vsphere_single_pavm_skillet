@@ -83,16 +83,30 @@ resource "local_file" "content" {
     filename = "${path.module}/bts/content/.content"
 }
 
+resource "null_resource" "mkisofs" {
+  provisioner "local-exec" {
+    command = "sudo apk add mkisofs -y"
+  }
+}
+
 
 resource "null_resource" "bts" {
   provisioner "local-exec" {
-    command = "dd if=${path.module}/bts of=${path.module}/btsiso-name.iso"
+    command = "mkisofs -J -o ${path.module}/bts_${var.vsphere_vm_name}.iso ${path.module}/bts"
   }
 }
 
 #===============================================================================
 # vSphere Resources
 #===============================================================================
+
+resource "vsphere_file" "bts_iso_upload" {
+  datacenter       = "${var.vsphere_datacenter}"
+  datastore        = "${var.vsphere_datastore}"
+  source_file      = "${path.module}/bts_${var.vsphere_vm_name}.iso"
+  destination_file = "/bts_${var.vsphere_vm_name}.iso"
+}
+
 
 # Create a vSphere VM folder #
 resource "vsphere_folder" "terraform-pa-vm" {
