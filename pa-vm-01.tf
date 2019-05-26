@@ -138,6 +138,11 @@ resource "vsphere_virtual_machine" "terraform-pa-vm" {
     eagerly_scrub    = "${data.vsphere_virtual_machine.template.disks.0.eagerly_scrub}"
   }
 
+  cdrom {
+    datastore_id = "${data.vsphere_datastore.datastore.id}"
+    path         = "/bts_${var.vsphere_vm_name}.iso"
+  }
+
   # VM networking - Management interface#
   network_interface {
     network_id   = "${data.vsphere_network.mgmt_network.id}"
@@ -164,4 +169,10 @@ resource "vsphere_virtual_machine" "terraform-pa-vm" {
   # Advanced options #
   wait_for_guest_net_timeout = false
   wait_for_guest_net_routable = false
+}
+
+# Output data #
+
+output "VM-Series management URL" {
+    value = "https://${var.pavm_ip_address}/"
 }

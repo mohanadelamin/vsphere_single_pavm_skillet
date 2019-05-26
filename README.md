@@ -66,7 +66,9 @@ Right click on the VM and select Template > Convert to Template
 
 6- Review the tasks plan and click "Continue".
 
-7- 
+7- Wait for the skillet to apply all the tasks and then click "Continue".
+
+8- Finally, review the output and click "Continue". Before accessing the VM management URL please wait for the bootstrapping process to finish.
 
 ## Support Policy
 
