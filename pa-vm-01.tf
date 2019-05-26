@@ -92,7 +92,7 @@ resource "null_resource" "mkisofs" {
 
 resource "null_resource" "bts" {
   provisioner "local-exec" {
-    command = "mkisofs -J -o ${path.module}/bts_${var.vsphere_vm_name}.iso ${path.module}/bts"
+    command = "/usr/bin/mkisofs -J -o ${path.module}/bts_${var.vsphere_vm_name}.iso ${path.module}/bts"
   }
 }
 

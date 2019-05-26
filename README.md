@@ -31,7 +31,7 @@ Right click on the VM and select Template > Convert to Template
 
 1- Import this repo into your panhandler.
 
-2- Run the skillet and fill the following fields:
+2- Run the skillet and fill the following fields and click submit (Make sure to add quotes if the value will contain space):
 * "user"  - description = "vSphere user name"
 * "password"  - description = "vSphere password"
 * "vsphere_server"  - description = "vCenter server FQDN or IP"
@@ -59,6 +59,14 @@ Right click on the VM and select Template > Convert to Template
 * "pavm_authcode"  - description = "VM-Series license auth code (Optional)" 
 
 3- Select "Validate, init, and Apply" and then click submit.
+
+4- After the init process finish click "Continue".
+
+5- Wait for the Validate process to finish successfully then click "Continue".
+
+6- Review the tasks plan and click "Continue".
+
+7- 
 
 ## Support Policy
 

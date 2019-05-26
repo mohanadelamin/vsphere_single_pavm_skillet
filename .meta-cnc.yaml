@@ -90,15 +90,15 @@ variables:
         value: 57344
   - name: vsphere_port_group_mgmt
     description: Manavgement Port Group
-    default: VM Network
+    default: "VM Network"
     type_hint: text
   - name: vsphere_port_group_untrust
     description: Untrust Port Group
-    default: VM Network
+    default: "VM Network"
     type_hint: text
   - name: vsphere_port_group_trust
     description: Trust Port Group
-    default: VM Network
+    default: "VM Network"
     type_hint: text
   - name: pavm_hostname
     description: VM-Series Host name
