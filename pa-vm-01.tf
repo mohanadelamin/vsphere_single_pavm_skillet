@@ -85,7 +85,7 @@ resource "local_file" "content" {
 
 resource "null_resource" "mkisofs" {
   provisioner "local-exec" {
-    command = "apk add mkisofs -y"
+    command = "apk add --no-cache cdrkit"
   }
 }
 
