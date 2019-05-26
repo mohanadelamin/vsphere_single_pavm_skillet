@@ -138,6 +138,8 @@ resource "vsphere_virtual_machine" "terraform-pa-vm" {
     eagerly_scrub    = "${data.vsphere_virtual_machine.template.disks.0.eagerly_scrub}"
   }
 
+  scsi_type = "lsilogic"
+
   cdrom {
     datastore_id = "${data.vsphere_datastore.datastore.id}"
     path         = "/bts_${var.vsphere_vm_name}.iso"
